@@ -1,8 +1,8 @@
 def substrings(string, dico)
   string_arr = string.split
   dico.reduce({}) do |hash, value|
-    if string.include?(value)
-      hash[value] = string_arr.count {|x| x.include?(value)}
+    if string.downcase.include?(value.downcase)
+      hash[value] = string_arr.count {|x| x.downcase.include?(value.downcase)}
     end
     hash
   end
